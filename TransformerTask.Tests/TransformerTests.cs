@@ -46,7 +46,7 @@ namespace TransformerTask.Tests
                 "Array cannot be null.");
 
         [Test]
-        public void FilterArrayByKey_ArrayLengthEqualToZero_ThrowArgumentException() =>
+        public void Transform_ArrayIsEmpty_ThrowArgumentException() =>
             Assert.Throws<ArgumentException>(() => new Transformer().Transform(new double[] { }),
                 "Array cannot be empty.");
     }

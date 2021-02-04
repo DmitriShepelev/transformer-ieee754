@@ -16,7 +16,23 @@ namespace TransformerTask
         /// <exception cref="ArgumentException">Throw if array is empty.</exception>
         public string[] Transform(double[] source)
         {
-            throw new NotImplementedException();
+            if (source == null)
+            {
+                throw new ArgumentNullException($"Array cannot be null.");
+            }
+
+            if (source.Length == 0)
+            {
+                throw new ArgumentException($"Array cannot be empty.");
+            }
+
+            var result = new string[source.Length];
+            for (int i = 0; i < source.Length; i++)
+            {
+                result[i] = DoubleExtension.GetIEEE754Format(source[i]);
+            }
+
+            return result;
         }
     }
 }

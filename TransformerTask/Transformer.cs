@@ -29,7 +29,7 @@ namespace TransformerTask
             var result = new string[source.Length];
             for (int i = 0; i < source.Length; i++)
             {
-                result[i] = DoubleExtension.GetIEEE754Format(source[i]);
+                result[i] = source[i].GetIEEE754Format();
             }
 
             return result;
